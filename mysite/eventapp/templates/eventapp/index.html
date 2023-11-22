@@ -1,0 +1,56 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HarmoniConnect</title>
+    <link rel="stylesheet" href="{% static 'eventapp/css/index.css' %}">
+</head>
+
+<body>
+    <header class="header">
+        <img class="background" src="{% static 'eventapp/images/event2.jpg' %}" alt="">
+        <nav class="navbar">
+            <ul>
+                <li><a href="{% url 'eventapp:index' %}" class="active">Home</a></li>
+                <li><a href="{% url 'eventapp:create_event' %}">Create event</a></li>
+                <li><a href="{% url 'eventapp:show_data' %}">View events</a></li>
+            </ul>
+        </nav>
+        <div class="container">
+            <h2>Welcome to <span>HarmoniConnect</span></h2>
+            <div class="header-content">
+                <div>
+                    <p class="header-item1">
+                        Let's create a day for you to remember together.
+                    </p>
+                    <button>Get started</button>
+                </div>
+                <div>
+                    <p class="header-item2">
+                        Are you an event service provider?
+                    </p>
+                </div>
+                <button>Register</button>
+            </div>
+        </div>
+    </header>
+    <div class="container2">
+        <div class="content">
+            <h1>Who we are</h1>
+            <p>
+                This platform aims to seamlessly connect entertainment service providers with clients,
+                revolutionizing the way entertainment services are discovered and booked within underserved
+                communities.
+                <br>
+                We envision not only fostering economic development but also enhancing the cultural vibrancy of
+                these
+                communities.
+            </p>
+        </div>
+    </div>
+</body>
+
+</html>
