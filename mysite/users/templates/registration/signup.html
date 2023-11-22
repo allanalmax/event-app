@@ -1,22 +1,30 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Signup</title>
+    <link rel="stylesheet" href="{% static 'users/css/signup.css' %}">
 </head>
+
 <body>
-    <div>
-        <h2>Create your acccount</h2>
-        {% if form.errors %}
-            <p>Your username or password is incorrect. Please try again!</p>
-        {% endif %}
+    <div class="container">
+        <div class="logo">
+            <h2>HarmoniConnect</h2>
+        </div>
+        <p class="statement">Create your acccount</p>
         <form action="{% url 'users:SignUp' %}" method="POST">
             {% csrf_token %}
             {{ form.as_p }}
             <input type="submit" value="Sign up">
             <input type="hidden" name="next" value="{% url 'eventapp:index' %}">
         </form>
+        <p class="account">
+            Already have an account? <span><a href="{% url 'users:login' %}">Sign in</a></span>
+        </p>
     </div>
 </body>
+
 </html>

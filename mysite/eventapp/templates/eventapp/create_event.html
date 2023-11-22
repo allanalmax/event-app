@@ -1,17 +1,23 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HarmoniConnect</title>
+    <link rel="stylesheet" href="{% static 'eventapp/css/create_event.css' %}">
 </head>
+
 <body>
-    <h2>Welcome to Harmonic Connect</h2>
-    <p>Please fill in your desired event details.</p>
-    <form method="post" action="{% url 'eventapp:create_event' %}">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Submit</button>
-    </form>
+    <div class="container">
+        <p>Please fill in your desired event details.</p>
+        <form method="post" action="{% url 'eventapp:create_event' %}">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Submit</button>
+        </form>
+    </div>
 </body>
+
 </html>

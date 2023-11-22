@@ -1,11 +1,38 @@
-<h2>Event list</h2>
-<ul>
-    {% for event in events %}
-        <li>
-            <strong>{{ event.title }}</strong><br>
-            Date: {{ event.date}} <br>
-            Location: {{ event.location}} <br>
-            Description: {{ event.description}} <br>
-        </li>
-    {% endfor %}
-</ul>
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HarmoniConnect</title>
+    <link rel="stylesheet" href="{% static 'eventapp/css/show_data.css' %}">
+</head>
+
+<body>
+    <div class="container">
+        <h2>Events Created</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Date</th>
+                    <th>Location</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for event in events %}
+                <tr>
+                    <td>{{ event.title }}</td>
+                    <td>{{ event.date }}</td>
+                    <td>{{ event.location }}</td>
+                    <td>{{ event.description }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>

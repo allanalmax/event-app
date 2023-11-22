@@ -22,19 +22,6 @@
     font-size: 1.1rem;
 }
 
-.container > p.error {
-    margin-top: 2.4rem;
-    margin-left: 20%;
-    margin-right: 20%;
-    width: auto;
-    text-align: center;
-    padding: 10px;
-    background-color: rgb(255, 211, 203);
-    color: red;
-    font-weight: normal;
-    font-size: 0.9rem;
-}
-
 .container > form {
     display: flex;
     justify-content: center;
@@ -59,7 +46,30 @@ form input[type='submit'] {
     border-radius: 5px;
 }
 
-.create-account {
+form .helptext {
+    display: none;
+}
+
+form ul {
+    display: none;
+}
+
+form ul.errorlist {
+    display: block;
+    text-align: center;
+    padding: 10px;
+    background-color: rgb(255, 211, 203);
+    color: red;
+    font-weight: normal;
+    font-size: 0.9rem;
+    list-style-type: none;
+}
+
+form input {
+    padding: 10px 10px;
+}
+
+.account {
     text-align: center;
     color: grey;
     font-size: 20px;
