@@ -1,108 +1,182 @@
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+:root {
+    --pink: rgb(209, 35, 93);
 }
 
 body {
-    padding: auto;
-    /* color: white; */
-    
+    overflow-x: hidden;
 }
 
-.header {
-    background-image: url(images/event2.jpg);
+div.bg {
+    background-image: url("../images/event.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+div.header {
     height: 100vh;
     width: 100vw;
+    backdrop-filter: blur(10px);
 }
 
-img.background {
-    filter: blur(2px);
-    width: 100%;
-    height: 90%;
-    position: absolute;
-    z-index: -1;
-    padding: 0;
-    margin: 0;
-}
-
-nav {
-    height: 7%;
-    width: 100%;
-    position: fixed;
-}
-
-ul {
-    list-style: none;
-    align-items: right;
-    margin: 0;
-    padding: 0;
+div.navbar {
     display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    padding: 10px;
-}
-
-li {
-    display: inline;
-    float: left;
-    padding-right: 10px;
-}
-
-li a {
-    text-decoration: none;
-    padding: 8px 16px;
-    display: block;
-    border-radius: 15px;
-    color: white;
-}
-
-li a:hover {
-    background-color: #555;
-    color: white;
-}
-
-.active {
-    background-color: darkseagreen;
-}
-
-.container {
-    display: flex;
+    padding: 10px 100px;
+    align-items: center;
     justify-content: space-between;
-    align-items: center;
+    height: 7%;
     color: white;
-    flex-direction: column;
 }
 
-.header-content {
-    flex-direction: row;
+.navbar a {
+    color: white;
+}
+
+.navbar > ul.links {
     display: flex;
+    align-items: center;
+    list-style-type: none;
+    width: 40%;
+    justify-content: space-evenly;
 }
 
-.header-item1 {
-    display: flex;
-    flex-direction: column;
+li#create {
+    border: 1px solid white;
+    padding: 10px 15px;
+    border-radius: 25px;
 }
 
-.header-item2 {
-    display: flex;
-    flex-direction: column;
-    float: right;
+li#view {
+    background-color: white;
+    padding: 10px 15px;
+    border-radius: 25px;
+    width: 8rem;
+    text-align: center;
 }
 
-div.container2 {
-    /* height: 68%; */
+li#view > a {
+    color: black;
+    font-weight: bold;
+    width: 8rem;
+    text-align: center;
+}
+
+li#logout {
+    background-color: tomato;
+    padding: 10px 15px;
+    border-radius: 25px;
+    color: white;
+    width: 6rem;
+    text-align: center;
+}
+
+div.container {
+    height: 93%;
     width: 100%;
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
 }
 
-.content {
-    width: 500px;
+div.center {
+    height: 50%;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+}
+
+.center > p.title {
+    font-size: 3.5rem;
     text-align: center;
+    color: white;
+}
+
+.center > p.title > span {
+    font-size: 3.5rem;
+    text-align: center;
+    font-weight: bold;
+    color: black;
+}
+
+.center > .bottom {
+    display: flex;
+    align-items: center;
     justify-content: center;
+    width: 70%;
+    height: 300px;
+    color: white;
+}
+
+.center div.item1,
+.center div.item2 {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+    justify-content: center;
+    height: 70%;
+    width: 30%;
+    text-align: center;
+}
+
+.center div.item1 {
+    margin-right: 50px;
+    padding-right: 50px;
+    border-right: 2px solid white;
+}
+
+.center button.call {
+    padding: 15px 20px;
+    background-color: var(--pink);
+    border: none;
+    width: 10rem;
+    border-radius: 25px;
+    color: white;
+}
+
+div.main {
+    height: 50vh;
+    width: 100vw;
+    padding: 50px 100px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: center;
+}
+
+.main > div.about {
+    margin-bottom: 40px; 
+}
+
+.main > .about h1 {
+    font-weight: bold;
+    color: var(--pink);
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+}
+
+.main > .about p {
+    color: grey;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 0.2rem;
+    line-height: 1.5rem;
+}
+
+.main > div.who {
+    width: 60%;
+}
+
+.main > .who h1 {
+    font-size: 1.2rem;
+}
+
+.main > .who > button {
+    padding: 15px 20px;
+    margin-top: 20px;
+    border-radius: 25px;
+    border: none;
+    background-color: rgb(82, 82, 82);
+    color: white;
 }

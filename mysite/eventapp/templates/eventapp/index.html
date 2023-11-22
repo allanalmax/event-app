@@ -6,39 +6,55 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HarmoniConnect</title>
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
     <link rel="stylesheet" href="{% static 'eventapp/css/index.css' %}">
 </head>
 
 <body>
-    <header class="header">
-        <img class="background" src="{% static 'eventapp/images/event2.jpg' %}" alt="">
-        <nav class="navbar">
-            <ul>
-                <li><a href="{% url 'eventapp:index' %}" class="active">Home</a></li>
-                <li><a href="{% url 'eventapp:create_event' %}">Create event</a></li>
-                <li><a href="{% url 'eventapp:show_data' %}">View events</a></li>
-            </ul>
-        </nav>
-        <div class="container">
-            <h2>Welcome to <span>HarmoniConnect</span></h2>
-            <div class="header-content">
-                <div>
-                    <p class="header-item1">
-                        Let's create a day for you to remember together.
-                    </p>
-                    <button>Get started</button>
+    <div class="bg">
+        <div class="header">
+            <div class="navbar">
+                <div class="logo">
+                    HarmoniConnect
                 </div>
-                <div>
-                    <p class="header-item2">
-                        Are you an event service provider?
-                    </p>
+                <ul class="links">
+                    <li><a href="{% url 'eventapp:index' %}" class="active">Home</a></li>
+                    <li><a href="#" class="active">About us</a></li>
+                    <li id="create"><a href="{% url 'eventapp:create_event' %}">+ Create event</a></li>
+                    {% if user.is_authenticated %}
+                        <li id="view"><a href="{% url 'eventapp:show_data' %}">View events</a></li>
+                        <li id="logout"><a href="{% url 'users:logout' %}">Logout</a></li>
+                    {% else %}
+                        <li id="login"><a href="{% url 'users:login' %}">Login</a></li>
+                        <li id="signup"><a href="{% url 'users:signup' %}">Register</a></li>
+                    {% endif %}
+                </ul>
+            </div>
+            <div class="container">
+                <div class="center">
+                    <p class="title">Welcome to <br><span>HarmoniConnect</span></p>
+                    <div class="bottom">
+                        <div class="item1">
+                            <p>
+                                Are you an event service provider?
+                            </p>
+                            <button class="call">Create Event</button>
+                        </div>
+                        <div class="item2">
+                            <p>Let's create a day for you to remember together.</p>
+                            <button class="call">Signup</button>
+                        </div>
+                    </div>
                 </div>
-                <button>Register</button>
             </div>
         </div>
-    </header>
-    <div class="container2">
-        <div class="content">
+    </div>
+    <div class="main">
+        <div class="about">
+            <h1>AboutUs</h1>
+            <p>Driven by a commitment to excellence, we provide a platform for enchanting events<br>that leave a lasting impression on your memories</p>
+        </div>
+        <div class="who">
             <h1>Who we are</h1>
             <p>
                 This platform aims to seamlessly connect entertainment service providers with clients,
@@ -49,6 +65,7 @@
                 these
                 communities.
             </p>
+            <button>Know More</button>
         </div>
     </div>
 </body>
