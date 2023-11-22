@@ -1,3 +1,11 @@
+:root {
+    --pink: rgb(209, 35, 93);
+}
+
+body {
+    overflow-x: hidden;
+}
+
 div.bg {
     background-image: url("../images/event.jpg");
     background-size: cover;
@@ -120,9 +128,55 @@ div.center {
 
 .center button.call {
     padding: 15px 20px;
-    background-color: palevioletred;
+    background-color: var(--pink);
     border: none;
     width: 10rem;
     border-radius: 25px;
+    color: white;
+}
+
+div.main {
+    height: 50vh;
+    width: 100vw;
+    padding: 50px 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.main > div.about {
+    margin-bottom: 40px; 
+}
+
+.main > .about h1 {
+    font-weight: bold;
+    color: var(--pink);
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+}
+
+.main > .about p {
+    color: grey;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 0.2rem;
+    line-height: 1.5rem;
+}
+
+.main > div.who {
+    width: 60%;
+}
+
+.main > .who h1 {
+    font-size: 1.2rem;
+}
+
+.main > .who > button {
+    padding: 15px 20px;
+    margin-top: 20px;
+    border-radius: 25px;
+    border: none;
+    background-color: rgb(82, 82, 82);
     color: white;
 }
